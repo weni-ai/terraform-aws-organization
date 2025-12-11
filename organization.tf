@@ -20,12 +20,6 @@ resource "aws_organizations_organization_service_access_status" "account_managem
   count = var.already_exists ? 1 : 0
 }
 
-resource "aws_organizations_delegated_administrator" "alternate_contact_delegate" {
-  account_id        = var.delegated_admin_account_id
-  service_principal = "account.amazonaws.com"
-  depends_on        = [aws_organizations_organization_service_access_status.account_management]
-}
-
 data "aws_organizations_organization" "existing" {
   count = var.already_exists ? 1 : 0
 }
