@@ -15,11 +15,6 @@ resource "aws_organizations_organization" "org" {
   feature_set = "ALL"
 }
 
-resource "aws_organizations_organization_service_access_status" "account_management" {
-  service_principal = "account.amazonaws.com"
-  count = var.already_exists ? 1 : 0
-}
-
 data "aws_organizations_organization" "existing" {
   count = var.already_exists ? 1 : 0
 }
