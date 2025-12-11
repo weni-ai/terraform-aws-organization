@@ -21,7 +21,3 @@ variable "enable_cost_optimizer" {
   default     = false
   description = "Whether the AWS Compute Optimize needs to be enabled when creating a new organisation"
 }
-
-variable "delegated_admin_account_id" {
-  description = "The account ID to be set as delegated administrator for AWS Account Management"
-}
